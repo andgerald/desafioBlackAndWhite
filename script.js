@@ -16,14 +16,11 @@ app.get("/", (req, res) => {
 app.get("/cargar", async (req, res) => {
   try {
     const { imagen } = req.query;
-
-    const image = await Jimp.read(`./${imagen}`);
     const cambioNombreImagen = uuid.v4().slice(0, 6);
-    await image
-      .resize(350, Jimp.AUTO)
-      .greyscale()
-      .writeAsync(`${cambioNombreImagen}.jpeg`);
-    res.sendFile(`${cambioNombreImagen}`);
+    const extension = `${cambioNombreImagen}.jpeg`;
+    const image = await Jimp.read(imagen);
+    await image.resize(350, Jimp.AUTO).greyscale().writeAsync(extension);
+    res.sendFile(__dirname + "/" + extension);
   } catch (error) {
     console.log("error en el catch: ", error.message);
     console.log("codigo del error en lectura de archivo: ", error.code);
