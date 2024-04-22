@@ -24,6 +24,9 @@ app.get("/cargar", async (req, res) => {
   } catch (error) {
     console.log("error en el catch: ", error.message);
     console.log("codigo del error en lectura de archivo: ", error.code);
+    if (error.code === "ENOENT") {
+      res.send("Debes agregar una url");
+    }
   }
 });
 
