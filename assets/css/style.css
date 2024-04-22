@@ -1,0 +1,31 @@
+body {
+  background-color: black;
+}
+.text {
+  color: white;
+}
+.text-padding {
+  padding-left: 30px;
+}
+.button {
+  color: white;
+  border-radius: 5px;
+  border-color: white;
+  background-color: black;
+  margin-right: 48px;
+  width: 200px;
+  height: 40px;
+  margin-top: 10px;
+}
+
+.container {
+  display: flex;
+  flex-direction: column;
+  padding-left: 40px;
+}
+.url {
+  width: 250px;
+  height: 25px;
+  border-radius: 5px;
+  margin-top: 10px;
+}
