@@ -27,11 +27,6 @@ app.get("/cargar", async (req, res) => {
   } catch (error) {
     console.log("error en el catch: ", error.message);
     console.log("codigo del error en lectura de archivo: ", error.code);
-    if (error.code == "ENOENT") {
-      res.status(404).send("Archivo no encontrado");
-    } else {
-      res.status(500).send("Error al procesar la imagen");
-    }
   }
 });
 
