@@ -1,3 +1,5 @@
+//NO ME QUISE TOMAR MAS TIEMPO Y HASTA ACA LLEGUE
+
 const express = require("express");
 const app = express();
 const Jimp = require("jimp");
